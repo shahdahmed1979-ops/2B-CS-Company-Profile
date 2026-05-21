@@ -1,0 +1,153 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/mixins' as m;
+
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: v.$z-nav;
+  padding: 1.25rem 0;
+  transition: background 0.3s, padding 0.3s, box-shadow 0.3s;
+
+  &.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.06), 0 4px 20px rgba(0,0,0,0.06);
+    padding: 0.75rem 0;
+  }
+}
+
+.nav-inner { @include m.flex-between; }
+
+.logo-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.logo { height: 36px; width: auto; }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  list-style: none;
+
+  button {
+    background: none;
+    border: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: v.$text-sec;
+    cursor: pointer;
+    position: relative;
+    padding: 0;
+    transition: color 0.3s;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 2px;
+      background: v.$orange;
+      transition: width 0.3s;
+    }
+
+    &:hover, &.active {
+      color: v.$text;
+      &::after { width: 100%; }
+    }
+
+    &.active { color: v.$orange; }
+  }
+
+  .nav-cta {
+    background: v.$orange !important;
+    color: v.$white !important;
+    padding: 0.55rem 1.4rem !important;
+    border-radius: v.$radius-sm !important;
+    font-weight: 700 !important;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s !important;
+
+    &::after { display: none !important; }
+    &:hover {
+      background: v.$orange-dark !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(243,112,33,0.28) !important;
+    }
+  }
+
+  @include m.lg { display: none; }
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+
+  span {
+    display: block;
+    width: 24px; height: 2px;
+    background: v.$text;
+    border-radius: 2px;
+    transition: all 0.3s;
+
+    &.open:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    &.open:nth-child(2) { opacity: 0; }
+    &.open:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  }
+
+  @include m.lg { display: flex; }
+}
+
+// ── Mobile menu overlay ───────────────────────────────────────────────────
+.mob-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: v.$z-nav - 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  &.open { display: flex; }
+
+  button {
+    background: none;
+    border: none;
+    font-family: v.$font-c;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: v.$text;
+    cursor: pointer;
+    transition: color 0.3s;
+    &:hover { color: v.$orange; }
+  }
+
+  .mob-cta {
+    background: v.$orange !important;
+    color: v.$white !important;
+    padding: 0.75rem 2.5rem !important;
+    border-radius: v.$radius-sm !important;
+    font-size: 1.2rem !important;
+    margin-top: 0.5rem;
+  }
+}
+
+.mob-close {
+  position: absolute;
+  top: 1.5rem; right: 2rem;
+  font-size: 2.5rem !important;
+  line-height: 1;
+  color: v.$text !important;
+}

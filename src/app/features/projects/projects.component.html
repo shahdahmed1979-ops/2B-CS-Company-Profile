@@ -1,0 +1,55 @@
+<section class="projects" id="projects">
+  <div class="projects-bg"></div>
+  <div class="container">
+
+    <div class="projects-head">
+      <div class="sec-tag">Portfolio</div>
+      <div class="sec-line"></div>
+      <h2 class="sec-h">Business-Based <span>Technology</span></h2>
+      <p class="sec-sub">Enterprise solutions deployed across diverse industries — built from real-world experience.</p>
+    </div>
+
+    <!-- Industry Filters -->
+    <div class="proj-filters">
+      <button class="pf-btn" [class.active]="activeFilter() === 'all'" (click)="setFilter('all')">
+        All Industries
+      </button>
+      @for (ind of industries; track ind.id) {
+        <button class="pf-btn" [class.active]="activeFilter() === ind.id" (click)="setFilter(ind.id)">
+          {{ ind.label }}
+        </button>
+      }
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="proj-grid">
+      @for (p of filteredProjects(); track p.id) {
+        <div class="proj-card" [class]="'proj-card--' + p.size">
+          <div class="proj-card-glow" [style.background]="p.color + '18'"></div>
+          <div class="proj-card-border" [style.border-color]="p.color + '30'"></div>
+
+          <div class="proj-industry-badge" [style.color]="p.color">
+            <span class="pib-dot" [style.background]="p.color"></span>
+            {{ p.industry }}
+          </div>
+
+          <h3 class="proj-title">{{ p.title }}</h3>
+          <p class="proj-desc">{{ p.desc }}</p>
+
+          <div class="proj-tags">
+            @for (tag of p.tags; track tag) {
+              <span class="proj-tag" [style.border-color]="p.color + '40'" [style.color]="p.color">{{ tag }}</span>
+            }
+          </div>
+
+          <div class="proj-arrow" [style.color]="p.color" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

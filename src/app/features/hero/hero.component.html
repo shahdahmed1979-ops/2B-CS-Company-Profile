@@ -1,0 +1,128 @@
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <canvas class="particles-canvas" #canvas></canvas>
+
+  <div class="container">
+    <div class="hero-grid">
+
+      <!-- Left: Supporting text + CTAs -->
+      <div class="hero-left">
+        <div class="hero-overline">
+          <span class="overline-bar"></span>
+          <span class="overline-text">2B Cloud Solutions</span>
+        </div>
+        <p class="hero-sub">
+          Dive into our services and see how we can help you thrive in a digital-first world.
+        </p>
+        <div class="hero-btns">
+          <button class="btn-primary" (click)="navigate('/contact')">
+            Book a Free Consultation
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <button class="btn-secondary" (click)="navigate('/services')">
+            Our Services
+          </button>
+        </div>
+      </div>
+
+      <!-- Center: Phone mockup -->
+      <div class="hero-center">
+        <div class="phone-wrap">
+          <div class="phone-glow"></div>
+          <div class="phone">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="screen-inner">
+                <div class="p-header">
+                  <span class="p-title">2B DASHBOARD</span>
+                  <span class="p-dot"></span>
+                </div>
+                <div class="p-row">
+                  <div class="p-card accent">
+                    <div class="p-label">Revenue</div>
+                    <div class="p-value accent">+34%</div>
+                  </div>
+                  <div class="p-card">
+                    <div class="p-label">Active Users</div>
+                    <div class="p-value">1,247</div>
+                  </div>
+                </div>
+                <div class="p-row">
+                  <div class="p-card">
+                    <div class="p-label">Projects</div>
+                    <div class="p-value">48</div>
+                  </div>
+                  <div class="p-card">
+                    <div class="p-label">Uptime</div>
+                    <div class="p-value">99.9%</div>
+                  </div>
+                </div>
+                <div class="p-chart">
+                  <div class="p-chart-label">Performance Overview</div>
+                  <div class="chart-bars">
+                    <span class="cbar" style="height:40%"></span>
+                    <span class="cbar active" style="height:65%"></span>
+                    <span class="cbar" style="height:52%"></span>
+                    <span class="cbar active" style="height:84%"></span>
+                    <span class="cbar" style="height:70%"></span>
+                    <span class="cbar active" style="height:92%"></span>
+                    <span class="cbar" style="height:76%"></span>
+                  </div>
+                </div>
+                <div class="p-item">
+                  <div class="p-ico">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                  </div>
+                  <div class="p-text"><strong>ERP System</strong>Automated workflows</div>
+                </div>
+                <div class="p-item">
+                  <div class="p-ico">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  </div>
+                  <div class="p-text"><strong>HR Module</strong>312 employees synced</div>
+                </div>
+                <div class="p-item">
+                  <div class="p-ico">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+                  </div>
+                  <div class="p-text"><strong>Cloud Storage</strong>84% optimized</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Headline -->
+      <div class="hero-right">
+        <h1 class="hero-h1">
+          2B is your<br>
+          <span class="hl">strategic</span><br>
+          partner in a<br>
+          Digital-First<br>
+          world
+        </h1>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-num">200+</div>
+            <div class="stat-lbl">Projects Delivered</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">98%</div>
+            <div class="stat-lbl">Client Satisfaction</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">10+</div>
+            <div class="stat-lbl">Years Experience</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="scroll-ind" aria-hidden="true">
+    <div class="s-mouse"></div>
+    <span>Scroll</span>
+  </div>
+</section>

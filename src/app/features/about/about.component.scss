@@ -1,0 +1,113 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/mixins' as m;
+
+.about {
+  padding: v.$space-2xl 0;
+  position: relative;
+  overflow: hidden;
+  background: v.$bg-alt;
+}
+
+.about-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 50% 60% at 80% 50%, rgba(243,112,33,.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+
+  @include m.lg { gap: 3rem; }
+  @include m.md { grid-template-columns: 1fr; }
+}
+
+// ── Section labels ────────────────────────────────────────────────────────
+.sec-tag {
+  font-family: v.$font-c;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: v.$orange;
+  margin-bottom: .75rem;
+}
+.sec-line { width: 52px; height: 3px; background: v.$orange; margin-bottom: 1.4rem; }
+.sec-h {
+  font-family: v.$font-c;
+  font-size: clamp(2.4rem, 4.5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: v.$text;
+  span { color: v.$orange; }
+}
+
+.story-label {
+  font-family: v.$font-c;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: v.$orange;
+  margin: 1.2rem 0 .6rem;
+  letter-spacing: .04em;
+}
+
+.about-txt { font-size: .95rem; color: v.$text-sec; line-height: 1.8; margin-bottom: 1.2rem; }
+
+.badges { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: .5rem; }
+.badge {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  background: rgba(243,112,33,.08);
+  border: 1px solid rgba(243,112,33,.2);
+  padding: .45rem .9rem;
+  border-radius: v.$radius-sm;
+  font-size: .78rem;
+  font-weight: 700;
+  color: v.$orange;
+  svg { width: 13px; height: 13px; stroke: v.$orange; }
+}
+
+// ── Floating Cards ────────────────────────────────────────────────────────
+.about-cards {
+  position: relative;
+  height: 460px;
+  @include m.md { height: 320px; }
+}
+
+.fc {
+  position: absolute;
+  background: v.$white;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: v.$radius-lg;
+  padding: 1.4rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,.07);
+  transition: box-shadow .3s, transform .3s;
+
+  &:hover {
+    box-shadow: 0 0 24px rgba(243,112,33,.12), 0 16px 40px rgba(0,0,0,.1);
+    transform: translateY(-4px);
+  }
+}
+
+.fc1 { top: 0; left: 10px; width: 195px; }
+.fc2 { top: 55px; right: 0; width: 215px; }
+.fc3 { bottom: 70px; left: 5px; width: 175px; }
+.fc4 { bottom: 10px; right: 15px; width: 195px; }
+
+.fc-ico {
+  width: 38px; height: 38px;
+  background: rgba(243,112,33,.1);
+  border: 1px solid rgba(243,112,33,.2);
+  border-radius: 10px;
+  @include m.flex-center;
+  margin-bottom: .9rem;
+  svg { width: 18px; height: 18px; stroke: v.$orange; }
+}
+.fc-num { font-family: v.$font-c; font-size: 1.9rem; font-weight: 700; color: v.$orange; margin-bottom: .2rem; }
+.fc-title { font-size: .88rem; font-weight: 700; color: v.$text; margin-bottom: .35rem; }
+.fc-desc { font-size: .74rem; color: v.$gray; line-height: 1.5; }

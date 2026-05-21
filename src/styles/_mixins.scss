@@ -1,0 +1,56 @@
+@use 'variables' as v;
+
+// ── Responsive ────────────────────────────────────────────────────────────
+@mixin sm { @media (max-width: v.$bp-sm) { @content; } }
+@mixin md { @media (max-width: v.$bp-md) { @content; } }
+@mixin lg { @media (max-width: v.$bp-lg) { @content; } }
+
+// ── Glass surface (light theme — frosted white) ───────────────────────────
+@mixin glass($border: v.$glass-border) {
+  background: v.$glass;
+  border: 1px solid $border;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+// ── Dark glass (phone mockups, footer, dark sections) ────────────────────
+@mixin dark-glass {
+  background: v.$dark-glass;
+  border: 1px solid v.$dark-border;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+// ── Glow shadow (light theme) ─────────────────────────────────────────────
+@mixin glow($color: v.$orange, $spread: 20px) {
+  box-shadow: 0 0 $spread rgba($color, 0.18), 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+// ── Card lift shadow (light bg cards) ────────────────────────────────────
+@mixin card-shadow {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06), 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+// ── Orange accent top border ──────────────────────────────────────────────
+@mixin accent-top {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, v.$orange, transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  &:hover::before { opacity: 1; }
+}
+
+// ── Flex helpers ──────────────────────────────────────────────────────────
+@mixin flex-center  { display: flex; align-items: center; justify-content: center; }
+@mixin flex-between { display: flex; align-items: center; justify-content: space-between; }
+
+// ── Section padding ───────────────────────────────────────────────────────
+@mixin section { padding: v.$space-2xl 0; }
+
+// ── Truncate text ─────────────────────────────────────────────────────────
+@mixin truncate { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }

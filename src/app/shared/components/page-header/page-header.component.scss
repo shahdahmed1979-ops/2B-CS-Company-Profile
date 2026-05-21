@@ -1,0 +1,78 @@
+@use '../../../../styles/variables' as v;
+@use '../../../../styles/mixins' as m;
+
+.page-header {
+  padding: 9rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+  background: v.$bg-alt;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+
+  &.dark {
+    background: v.$dark-bg;
+    border-bottom-color: rgba(255,255,255,.06);
+
+    .ph-title { color: v.$white; }
+    .ph-sub   { color: #888; }
+    .ph-home  { color: #666; &:hover { color: v.$orange; } }
+    .ph-chevron { stroke: #444; }
+    .ph-current { color: #888; }
+  }
+}
+
+.ph-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(243,112,33,.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.container { position: relative; z-index: 1; }
+
+// ── Breadcrumb ────────────────────────────────────────────────────────────
+.ph-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  margin-bottom: 1.5rem;
+}
+
+.ph-home {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: .8rem;
+  color: v.$gray;
+  cursor: pointer;
+  transition: color .25s;
+  &:hover { color: v.$orange; }
+}
+
+.ph-chevron {
+  width: 14px; height: 14px;
+  stroke: rgba(0,0,0,.25);
+  flex-shrink: 0;
+}
+
+.ph-current {
+  font-size: .8rem;
+  color: v.$orange;
+  font-weight: 600;
+}
+
+// ── Title ─────────────────────────────────────────────────────────────────
+.ph-title {
+  font-family: v.$font-c;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 700;
+  line-height: 1.0;
+  color: v.$text;
+  margin-bottom: .75rem;
+}
+
+.ph-sub {
+  font-size: 1.05rem;
+  color: v.$text-sec;
+  max-width: 520px;
+  line-height: 1.7;
+}

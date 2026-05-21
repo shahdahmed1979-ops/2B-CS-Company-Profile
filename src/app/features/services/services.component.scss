@@ -1,0 +1,134 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/mixins' as m;
+
+.services { padding: v.$space-2xl 0; position: relative; background: v.$bg-alt; }
+
+.srv-head { margin-bottom: 4rem; }
+.sec-tag {
+  font-family: v.$font-c; font-size: .72rem; font-weight: 700;
+  letter-spacing: .3em; text-transform: uppercase; color: v.$orange; margin-bottom: .75rem;
+}
+.sec-line { width: 52px; height: 3px; background: v.$orange; margin-bottom: 1.4rem; }
+.sec-h {
+  font-family: v.$font-c; font-size: clamp(2.4rem, 4.5vw, 4rem);
+  font-weight: 700; line-height: 1.05; color: v.$text;
+  span { color: v.$orange; }
+}
+
+.srv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  @include m.lg { grid-template-columns: 1fr; }
+}
+
+// ── Preview card (stays dark — it's a UI mockup) ──────────────────────────
+.srv-preview {
+  position: sticky;
+  top: 100px;
+  @include m.lg { position: relative; top: 0; }
+}
+
+.srv-preview-card {
+  background: #111;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: v.$radius-lg;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,.18);
+  transition: box-shadow .4s;
+
+  &:hover {
+    box-shadow: 0 0 32px rgba(243,112,33,.15), 0 24px 64px rgba(0,0,0,.2);
+  }
+}
+
+.srv-visual {
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.5s ease;
+}
+
+.dmock { width: 90%; margin: 0 auto; padding: .9rem 0; }
+.dm-head { @include m.flex-between; margin-bottom: .6rem; }
+.dm-title { font-size: .7rem; font-weight: 700; color: #fff; letter-spacing: .08em; }
+.dm-dots { display: flex; gap: 4px; }
+.dd { width: 6px; height: 6px; border-radius: 50%; &.red { background: #ff5f57; } &.yellow { background: #febc2e; } &.green { background: #28c840; } }
+
+.dm-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.dm-stat {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 8px;
+  padding: 7px;
+}
+.dm-val { font-size: .95rem; font-weight: 700; transition: color .4s; color: #fff; }
+.dm-lbl { font-size: .55rem; color: #888; margin-top: 2px; }
+
+.dm-bars {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 8px;
+  padding: 8px;
+  height: 60px;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+}
+.dm-bar { flex: 1; border-radius: 2px 2px 0 0; transition: background .5s, height .5s; }
+
+.srv-info { padding: 1.4rem; background: #111; }
+.srv-itag { font-size: .68rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: v.$orange; margin-bottom: .4rem; }
+.srv-ih { font-family: v.$font-c; font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: .4rem; }
+.srv-id { font-size: .84rem; color: #888; line-height: 1.6; }
+
+// ── Service list (light theme) ────────────────────────────────────────────
+.srv-list { list-style: none; }
+
+.srv-item {
+  border-bottom: 1px solid rgba(0,0,0,.07);
+  cursor: pointer;
+  &:first-child { border-top: 1px solid rgba(0,0,0,.07); }
+}
+
+.srv-inner {
+  @include m.flex-between;
+  padding: 1.8rem 0;
+  transition: padding .3s;
+  .srv-item.active & { padding-left: .5rem; }
+}
+
+.srv-left { display: flex; align-items: center; gap: 1.4rem; }
+
+.srv-num {
+  font-family: v.$font-c; font-size: .78rem; font-weight: 700;
+  color: v.$gray; letter-spacing: .1em; min-width: 28px;
+  transition: color .3s;
+  .srv-item.active &, .srv-item:hover & { color: v.$orange; }
+}
+
+.srv-name {
+  font-family: v.$font-c;
+  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+  font-weight: 700;
+  color: rgba(0,0,0,.2);
+  transition: color .4s;
+  .srv-item.active &, .srv-item:hover & { color: v.$text; }
+}
+
+.srv-arr {
+  width: 30px; height: 30px;
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 50%;
+  @include m.flex-center;
+  opacity: 0;
+  transition: all .3s;
+  svg { width: 13px; height: 13px; stroke: v.$orange; }
+  .srv-item.active &, .srv-item:hover & { opacity: 1; border-color: v.$orange; }
+}

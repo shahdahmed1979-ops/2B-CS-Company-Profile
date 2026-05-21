@@ -1,0 +1,16 @@
+<div class="page-header" [class.dark]="dark">
+  <div class="ph-bg"></div>
+  <div class="container">
+    <nav class="ph-breadcrumb" aria-label="Breadcrumb">
+      <button class="ph-home" (click)="goHome()">Home</button>
+      <svg class="ph-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M9 18l6-6-6-6"/>
+      </svg>
+      <span class="ph-current">{{ title }}</span>
+    </nav>
+    <h1 class="ph-title">{{ title }}</h1>
+    @if (sub) {
+      <p class="ph-sub">{{ sub }}</p>
+    }
+  </div>
+</div>

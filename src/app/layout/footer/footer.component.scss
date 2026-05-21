@@ -1,0 +1,160 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/mixins' as m;
+
+.footer {
+  background: v.$dark-bg;
+  border-top: 1px solid rgba(255,255,255,.06);
+  padding: v.$space-lg 0 v.$space-md;
+}
+
+// ── Grid ──────────────────────────────────────────────────────────────────
+.foot-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 3rem;
+  margin-bottom: v.$space-lg;
+
+  @include m.lg {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+  @include m.sm {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+// ── Brand ─────────────────────────────────────────────────────────────────
+.logo-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.logo { height: 30px; width: auto; }
+
+.foot-tagline {
+  font-size: .85rem;
+  color: #888;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  max-width: 240px;
+}
+
+.foot-social {
+  display: flex;
+  gap: .6rem;
+}
+
+.soc-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  color: #888;
+  text-decoration: none;
+  transition: all .3s;
+
+  svg { width: 15px; height: 15px; }
+
+  &:hover {
+    background: rgba(243,112,33,.14);
+    border-color: rgba(243,112,33,.3);
+    color: v.$orange;
+    transform: translateY(-2px);
+  }
+}
+
+// ── Column ────────────────────────────────────────────────────────────────
+.foot-col-title {
+  font-family: v.$font-c;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: v.$white;
+  margin-bottom: 1.2rem;
+}
+
+.foot-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .65rem;
+
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: .83rem;
+    color: #888;
+    cursor: pointer;
+    text-align: left;
+    transition: color .25s;
+
+    &:hover { color: v.$orange; }
+  }
+}
+
+// ── Contact info ──────────────────────────────────────────────────────────
+.foot-contact {
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+}
+
+.fci {
+  display: flex;
+  align-items: flex-start;
+  gap: .65rem;
+  font-size: .83rem;
+  color: #888;
+
+  svg {
+    width: 15px; height: 15px;
+    flex-shrink: 0;
+    margin-top: .1rem;
+    stroke: v.$orange;
+  }
+}
+
+// ── Bottom bar ────────────────────────────────────────────────────────────
+.foot-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+.copy {
+  font-size: .78rem;
+  color: #555;
+}
+
+.foot-legal {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+}
+
+.legal-link {
+  font-size: .78rem;
+  color: #555;
+  text-decoration: none;
+  transition: color .25s;
+
+  &:hover { color: v.$orange; }
+}
+
+.legal-sep {
+  color: rgba(255,255,255,.15);
+  font-size: .78rem;
+}

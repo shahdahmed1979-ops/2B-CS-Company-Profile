@@ -1,0 +1,68 @@
+<section class="services" id="services">
+  <div class="container">
+
+    <div class="srv-head">
+      <div class="sec-tag">What We Do</div>
+      <div class="sec-line"></div>
+      <h2 class="sec-h">Our <span>Services</span></h2>
+    </div>
+
+    <div class="srv-grid">
+
+      <!-- Left: Preview -->
+      <div class="srv-preview">
+        <div class="srv-preview-card">
+          <div class="srv-visual" [style.background]="'linear-gradient(135deg, #0a0a0a, ' + services[active()].barColor + '22)'">
+            <div class="dmock">
+              <div class="dm-head">
+                <span class="dm-title">{{ services[active()].visual }}</span>
+                <div class="dm-dots">
+                  <span class="dd red"></span>
+                  <span class="dd yellow"></span>
+                  <span class="dd green"></span>
+                </div>
+              </div>
+              <div class="dm-stats">
+                @for (s of services[active()].stats; track s.label) {
+                  <div class="dm-stat">
+                    <div class="dm-val" [style.color]="services[active()].barColor">{{ s.val }}</div>
+                    <div class="dm-lbl">{{ s.label }}</div>
+                  </div>
+                }
+              </div>
+              <div class="dm-bars">
+                @for (b of bars; track $index) {
+                  <div class="dm-bar" [style.height.%]="b" [style.background]="services[active()].barColor" [style.opacity]="0.5 + ($index % 3) * 0.2"></div>
+                }
+              </div>
+            </div>
+          </div>
+          <div class="srv-info">
+            <div class="srv-itag">{{ services[active()].tag }}</div>
+            <div class="srv-ih">{{ services[active()].heading }}</div>
+            <div class="srv-id">{{ services[active()].desc }}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: List -->
+      <ul class="srv-list">
+        @for (s of services; track s.num; let i = $index) {
+          <li class="srv-item" [class.active]="active() === i"
+              (mouseenter)="setActive(i)" (click)="setActive(i)">
+            <div class="srv-inner">
+              <div class="srv-left">
+                <span class="srv-num">{{ s.num }}</span>
+                <span class="srv-name">{{ s.tag }}</span>
+              </div>
+              <div class="srv-arr" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </li>
+        }
+      </ul>
+
+    </div>
+  </div>
+</section>

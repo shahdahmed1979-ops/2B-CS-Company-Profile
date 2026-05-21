@@ -1,0 +1,66 @@
+// ── 2B Cloud Solutions — Brand Design Tokens (Light Theme) ───────────────
+
+// Brand colors
+$orange:        #f37021;
+$orange-dark:   #c8581a;
+$orange-glow:   rgba(243, 112, 33, 0.12);
+$black:         #000000;
+$rich-black:    #1a0f00;
+
+// Light theme backgrounds
+$bg:            #ffffff;
+$bg-alt:        #f8f7f5;
+$surface:       #f2f0ed;
+$surface-2:     #e8e5e0;
+
+// Glass — frosted white for light backgrounds
+$glass:         rgba(255, 255, 255, 0.85);
+$glass-border:  rgba(0, 0, 0, 0.08);
+
+// Text
+$white:         #ffffff;
+$text:          #0d0d0d;
+$text-sec:      #555555;
+$gray:          #888888;
+$gray-light:    #444444;
+
+// Typography
+$font:          'Barlow', 'Arial', sans-serif;
+$font-c:        'Barlow Condensed', 'Arial Narrow', sans-serif;
+
+// Spacing scale
+$space-xs:  0.5rem;
+$space-sm:  1rem;
+$space-md:  2rem;
+$space-lg:  4rem;
+$space-xl:  6rem;
+$space-2xl: 8rem;
+
+// Border radius
+$radius-sm:  4px;
+$radius-md:  12px;
+$radius-lg:  20px;
+$radius-xl:  32px;
+
+// Transitions
+$ease-smooth:    cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+$ease-out:       cubic-bezier(0.0, 0.0, 0.2, 1);
+
+// Breakpoints
+$bp-sm:  480px;
+$bp-md:  768px;
+$bp-lg:  1024px;
+$bp-xl:  1280px;
+
+// Z-index
+$z-base:    1;
+$z-overlay: 10;
+$z-nav:     100;
+$z-modal:   200;
+
+// Dark section colors (used in footer, projects, phone mockups)
+$dark-bg:       #0a0806;
+$dark-surface:  #121010;
+$dark-glass:    rgba(255, 255, 255, 0.04);
+$dark-border:   rgba(255, 255, 255, 0.08);
