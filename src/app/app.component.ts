@@ -8,10 +8,10 @@ import Lenis from 'lenis';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, NavbarComponent, FooterComponent],
-  templateUrl: './app.html',
-  styleUrl: './app.scss'
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss'
 })
-export class App implements OnInit {
+export class AppComponent implements OnInit {
   ngOnInit() {
     const lenis = new Lenis({ duration: 1.4, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
     const raf = (time: number) => { lenis.raf(time); requestAnimationFrame(raf); };

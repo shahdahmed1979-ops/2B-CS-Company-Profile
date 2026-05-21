@@ -3,16 +3,8 @@
     <div class="nav-inner">
 
       <button class="logo-btn" (click)="navigate('/')" aria-label="2B Cloud Solutions home">
-        <svg class="logo" viewBox="0 0 160 76" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect x="0" y="0" width="68" height="60" fill="#1a0f00" rx="2"/>
-          <rect x="8" y="12" width="52" height="9" fill="white"/>
-          <rect x="8" y="31" width="52" height="9" fill="white"/>
-          <polygon points="72,0 146,0 160,14 160,60 72,60" fill="#f37021"/>
-          <rect x="82" y="12" width="62" height="9" fill="white"/>
-          <rect x="82" y="31" width="62" height="9" fill="white"/>
-          <rect x="0" y="64" width="160" height="7" fill="#1a0f00" rx="1"/>
-        </svg>
-      </button>
+<img src="2blogo.png" class="logo" >
+      </button> 
 
       <ul class="nav-links">
         <li><button (click)="navigate('/')" [class.active]="isActive('/')">Home</button></li>

@@ -7,7 +7,7 @@ import { ProjectsComponent } from '../../features/projects/projects.component';
 import { ContactComponent } from '../../features/contact/contact.component';
 
 @Component({
-  selector: 'app-home-page',
+  selector: 'app-home',
   standalone: true,
   imports: [HeroComponent, AboutComponent, ValuesComponent, ServicesComponent, ProjectsComponent, ContactComponent],
   template: `
@@ -19,4 +19,4 @@ import { ContactComponent } from '../../features/contact/contact.component';
     <app-contact></app-contact>
   `
 })
-export class HomePage {}
+export class HomeComponent {}

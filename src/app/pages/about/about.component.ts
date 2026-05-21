@@ -16,4 +16,4 @@ import { ValuesComponent } from '../../features/values/values.component';
     <app-values></app-values>
   `
 })
-export class AboutPage {}
+export class AboutPageComponent {}

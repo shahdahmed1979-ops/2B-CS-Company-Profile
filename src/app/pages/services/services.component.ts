@@ -14,4 +14,4 @@ import { ServicesComponent } from '../../features/services/services.component';
     <app-services></app-services>
   `
 })
-export class ServicesPage {}
+export class ServicesPageComponent {}

@@ -15,4 +15,4 @@ import { ProjectsComponent } from '../../features/projects/projects.component';
     <app-projects></app-projects>
   `
 })
-export class ProjectsPage {}
+export class ProjectsPageComponent {}

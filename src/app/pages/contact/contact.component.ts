@@ -14,4 +14,4 @@ import { ContactComponent } from '../../features/contact/contact.component';
     <app-contact></app-contact>
   `
 })
-export class ContactPage {}
+export class ContactPageComponent {}
